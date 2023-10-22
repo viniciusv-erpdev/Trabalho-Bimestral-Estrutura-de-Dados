@@ -12,6 +12,8 @@ int main(){
     string s;
     while(getline(LerArquivo, s))
             arvore.insert(s);
-
+    arvore.PreOrdem();
+    LerArquivo.close();
+    return 0;
 
 }

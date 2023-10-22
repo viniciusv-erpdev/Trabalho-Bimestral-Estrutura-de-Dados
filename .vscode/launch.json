@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/vcvic/OneDrive/Documentos/Nova pasta",
-      "program": "c:/Users/vcvic/OneDrive/Documentos/Nova pasta/build/Debug/outDebug",
+      "cwd": "c:/Users/vcvic/OneDrive/Documentos/Binary Tree",
+      "program": "c:/Users/vcvic/OneDrive/Documentos/Binary Tree/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

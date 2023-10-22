@@ -15,7 +15,7 @@ class BinaryTree{
 
     private:
     struct TreeNode{
-        int Entry;
+        string Entry;
         TreeNode* LeftNode;
         TreeNode* RightNode;
     };
