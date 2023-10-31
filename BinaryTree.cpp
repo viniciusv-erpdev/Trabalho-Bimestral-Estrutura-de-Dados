@@ -9,19 +9,6 @@ BinaryTree::BinaryTree(){
     root = NULL;
 }
 
-BinaryTree::~BinaryTree(){
-    DestruirArvore();
-}
-
-void BinaryTree::DestruirArvore(TreePointer folha){
-    if(folha != NULL){
-        DestruirArvore(folha->LeftNode);
-        DestruirArvore(folha->RightNode);
-        delete folha;
-    }
-}
-
-
 void BinaryTree::insert(string s, TreePointer folha){
     if(s < folha->Entry){
         if(folha->LeftNode != NULL){

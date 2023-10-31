@@ -15,7 +15,6 @@ class BinaryTree{
     void insert();
     void PreOrdem();
     void insert(string s);
-    void DestruirArvore();
 
     private:
 
@@ -29,7 +28,7 @@ class BinaryTree{
 
     void PreOrdem(TreePointer folha);
     void insert(string s, TreePointer folha);
-    void DestruirArvore(TreePointer folha);
+
 };
 
 #endif

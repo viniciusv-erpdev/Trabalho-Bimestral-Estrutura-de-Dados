@@ -31,11 +31,11 @@ int main(){
     LerArquivo.open("exemplo1.tree");
     while(LerArquivo.eof() != true){
         LerArquivo >> s;
-        if(s == "X"){
+        if(s != "X"){
         arvore.insert(s);
         }
-        arvore.PreOrdem();
     }
+        arvore.PreOrdem();
 }
 
     if(num == 2){
@@ -47,10 +47,9 @@ int main(){
         if(s != "X"){
         arvore.insert(s);
         }
-        arvore.PreOrdem();
     }
-
-
+        arvore.PreOrdem();
+    
     return 0;
 
 }
