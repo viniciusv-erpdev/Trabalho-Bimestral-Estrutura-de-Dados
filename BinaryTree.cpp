@@ -10,8 +10,17 @@ BinaryTree::BinaryTree(){
 }
 
 BinaryTree::~BinaryTree(){
-
+    DestruirArvore();
 }
+
+void BinaryTree::DestruirArvore(TreePointer folha){
+    if(folha != NULL){
+        DestruirArvore(folha->LeftNode);
+        DestruirArvore(folha->RightNode);
+        delete folha;
+    }
+}
+
 
 void BinaryTree::insert(string s, TreePointer folha){
     if(s < folha->Entry){
@@ -35,6 +44,7 @@ void BinaryTree::insert(string s, TreePointer folha){
     }
 }
 
+
 void BinaryTree::insert(string s){
     if(root != NULL){
         insert(s, root);
@@ -43,18 +53,19 @@ void BinaryTree::insert(string s){
         root->Entry = s;
         root->LeftNode = NULL;
         root->RightNode = NULL;
-    }
+    }    
 }
 
 void BinaryTree::PreOrdem(){
     PreOrdem(root);
-    cout << "\n";
 }
 
 void BinaryTree::PreOrdem(TreeNode* folha){
     if(folha != NULL){
-        cout << folha->Entry << ",";
+        cout << folha->Entry << "," << " \n";
         PreOrdem(folha->LeftNode);
         PreOrdem(folha->RightNode);
+        }
     }
-}
+
+

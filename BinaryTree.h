@@ -7,13 +7,18 @@
 using namespace std;
 
 class BinaryTree{
+    
     public:
+
     BinaryTree();
     ~BinaryTree();
-    void insert(string s);
+    void insert();
     void PreOrdem();
+    void insert(string s);
+    void DestruirArvore();
 
     private:
+
     struct TreeNode{
         string Entry;
         TreeNode* LeftNode;
@@ -22,9 +27,9 @@ class BinaryTree{
     typedef TreeNode* TreePointer;
     TreePointer root;
 
-    void insert(string s, TreePointer folha);
     void PreOrdem(TreePointer folha);
-
+    void insert(string s, TreePointer folha);
+    void DestruirArvore(TreePointer folha);
 };
 
 #endif

@@ -3,6 +3,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <sstream>
 using namespace std;
 
 int main(){
@@ -25,22 +26,32 @@ int main(){
     }
     
     if(num == 1){
-    ifstream LerArquivo("exemplo1.tree");
-    while(getline(LerArquivo, s))
-            arvore.insert(s);
-    arvore.PreOrdem();
-    LerArquivo.close();
+    ifstream LerArquivo;
+    system("cls");
+    LerArquivo.open("exemplo1.tree");
+    while(LerArquivo.eof() != true){
+        LerArquivo >> s;
+        if(s == "X"){
+        arvore.insert(s);
+        }
+        arvore.PreOrdem();
     }
+}
 
     if(num == 2){
-    ifstream LerArquivo("exemplo2.tree");
-    while(getline(LerArquivo, s))
-            arvore.insert(s);
-    arvore.PreOrdem();
-    LerArquivo.close();
+    system("cls");
+    ifstream LerArquivo;
+    LerArquivo.open("exemplo2.tree");
+    while(LerArquivo.eof() != true){
+        LerArquivo >> s;
+        if(s != "X"){
+        arvore.insert(s);
+        }
+        arvore.PreOrdem();
     }
 
 
     return 0;
 
+}
 }
