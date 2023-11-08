@@ -11,10 +11,10 @@ class BinaryTree{
     public:
 
     BinaryTree();
-    ~BinaryTree();
     void insert();
     void PreOrdem();
     void insert(string s);
+    void verificarFilho();
 
     private:
 
@@ -28,7 +28,7 @@ class BinaryTree{
 
     void PreOrdem(TreePointer folha);
     void insert(string s, TreePointer folha);
-
+    void verificarFilho(TreePointer folha);
 };
 
 #endif

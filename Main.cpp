@@ -9,9 +9,10 @@ using namespace std;
 int main(){
 
     BinaryTree arvore;
-    string s;
+    string chave1, chave2, chave3;
     int num;
-    
+    ifstream LerArquivo;
+
     cout << "Selecione uma das opcoes: \n";
     cout << "1.ler exemplo1 \n";
     cout << "2.ler exemplo2 \n";
@@ -26,31 +27,24 @@ int main(){
     }
     
     if(num == 1){
-    ifstream LerArquivo;
     system("cls");
     LerArquivo.open("exemplo1.tree");
     while(LerArquivo.eof() != true){
-        LerArquivo >> s;
-        if(s != "X"){
-        arvore.insert(s);
+        LerArquivo >> chave1 >> chave2 >> chave3;
+        if(chave1 == "X" && chave2 == "X" && chave3 == "X"){
+            break;
         }
+        if(chave1 != "X"){
+            arvore.insert(chave1);
+             }
+                 if(chave2 != "X"){
+                    arvore.insert(chave2);
+                }
+                    if(chave3 != "X"){
+                        arvore.insert(chave3);
+                    }
     }
-        arvore.PreOrdem();
+}
+    arvore.PreOrdem();
 }
 
-    if(num == 2){
-    system("cls");
-    ifstream LerArquivo;
-    LerArquivo.open("exemplo2.tree");
-    while(LerArquivo.eof() != true){
-        LerArquivo >> s;
-        if(s != "X"){
-        arvore.insert(s);
-        }
-    }
-        arvore.PreOrdem();
-    
-    return 0;
-
-}
-}
