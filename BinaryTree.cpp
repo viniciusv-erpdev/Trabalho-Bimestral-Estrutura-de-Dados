@@ -5,9 +5,11 @@
 #include <string>
 using namespace std;
 
+
 BinaryTree::BinaryTree(){
     root = NULL;
 }
+
 
 void BinaryTree::insert(string s, TreePointer folha){
     if(s < folha->Entry){
@@ -42,33 +44,34 @@ void BinaryTree::insert(string s){
     }    
 }
 
-void BinaryTree::PreOrdem(){
-    PreOrdem(root);
-}
-
-void BinaryTree::PreOrdem(TreeNode* folha){
-    if(folha != NULL){
-        cout << folha->Entry << "," << "\n";
-        PreOrdem(folha->LeftNode);
-        PreOrdem(folha->RightNode);
-        }
-    }
-
-
 void BinaryTree::verificarFilho(){
     verificarFilho(root);
 }
 
 void BinaryTree::verificarFilho(TreePointer folha){
     if(folha != NULL){
-        if(folha->LeftNode != NULL && folha->RightNode){
-            cout << " ED" << "\n";
+        if(folha->LeftNode != NULL && folha->RightNode != NULL){
+            cout << "  2 ED" << "\n";
         }else if(folha->RightNode != NULL){
-            cout << " D" << "\n";
+            cout << " 1 D" << "\n";
+        }else if(folha->LeftNode != NULL){
+            cout << " 1 E" << "\n";
         }else{
-            cout << " E" << "\n";
+            cout << " 0";
         }
     }
 }
 
+void BinaryTree::PreOrdem(){
+    PreOrdem(root);
+}
 
+void BinaryTree::PreOrdem(TreeNode* folha){
+    if(folha != NULL){
+        cout << folha->Entry << ",";
+        verificarFilho();
+        cout << "\n";
+        PreOrdem(folha->LeftNode);
+        PreOrdem(folha->RightNode);
+        }
+    }
