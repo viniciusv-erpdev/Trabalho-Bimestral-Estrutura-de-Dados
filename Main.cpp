@@ -29,20 +29,9 @@ int main(){
     system("cls");
     LerArquivo.open("exemplo1.tree");
     if(!LerArquivo.is_open()){ cout << "Erro ao abrir o arquivo! \n";}
-    while(LerArquivo.eof() != true){
-        LerArquivo >> chave1 >> chave2 >> chave3;
-        if(chave1 == "X" && chave2 == "X" && chave3 == "X"){
-            break;
-        }
-        if(chave1 != "X"){
-            arvore.insert(chave1);
-             }
-                 if(chave2 != "X"){
-                    arvore.insert(chave2);
-                }
-                    if(chave3 != "X"){
-                        arvore.insert(chave3);
-                    }
+    while(LerArquivo >> chave1 >> chave2 >> chave3){
+       arvore.insert(chave1, chave2, chave3);
+
     }
 }
 
@@ -50,22 +39,13 @@ int main(){
     system("cls");
     LerArquivo.open("exemplo2.tree");
     if(!LerArquivo.is_open()){ cout << "Erro ao abrir o arquivo! \n";}
-    while(LerArquivo.eof() != true){
-        LerArquivo >> chave1 >> chave2 >> chave3;
-        if(chave1 == "X" && chave2 == "X" && chave3 == "X"){
-            break;
-        }
-        if(chave1 != "X"){
-            arvore.insert(chave1);
-             }
-                 if(chave2 != "X"){
-                    arvore.insert(chave2);
-                }
-                    if(chave3 != "X"){
-                        arvore.insert(chave3);
-                    }
+    while(LerArquivo >> chave1 >> chave2 >> chave3){
+        arvore.insert(chave1, chave2, chave3);
+                         
     }
+
 }
+
     arvore.PreOrdem();
     LerArquivo.close();
     return 0;
