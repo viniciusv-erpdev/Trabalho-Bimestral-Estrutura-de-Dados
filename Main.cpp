@@ -1,4 +1,5 @@
 //Vinícius Vicari n 2124925
+//Pedro Henrique Caetano Barbosa n 2154635
 #include "BinaryTree.h"
 #include <iostream>
 #include <fstream>
@@ -31,8 +32,10 @@ int main(){
     if(!LerArquivo.is_open()){ cout << "Erro ao abrir o arquivo! \n";}
     while(LerArquivo >> chave1 >> chave2 >> chave3){
        arvore.insert(chave1, chave2, chave3);
-       arvore.contarNos(); 
     }
+    
+    arvore.contarNos(); 
+    arvore.nosSemFilhos();
 }
 
     if(num == 2){
@@ -41,13 +44,17 @@ int main(){
     if(!LerArquivo.is_open()){ cout << "Erro ao abrir o arquivo! \n";}
     while(LerArquivo >> chave1 >> chave2 >> chave3){
         arvore.insert(chave1, chave2, chave3);
-        arvore.contarNos();                         
     }
+    
+    arvore.contarNos();   
+    arvore.nosSemFilhos();
+                      
 
 }
 
     arvore.PreOrdem();
-    cout << "\n O numero de nos da arvore e: " << arvore.contarNos(); 
+    cout << arvore.contarNos() << " ";
+    cout << arvore.nosSemFilhos();
     LerArquivo.close();
     return 0;
 }

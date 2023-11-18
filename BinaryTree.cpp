@@ -1,4 +1,5 @@
 //Vinícius Vicari n 2124925
+//Pedro Henrique Caetano Barbosa n 2154635
 #include "BinaryTree.h"
 #include <iostream>
 #include <fstream>
@@ -52,7 +53,6 @@ void BinaryTree::verificarFilho(){
 void BinaryTree::verificarFilho(TreePointer folha){
     if (folha != NULL) {
         int numFilhos = 0;
-        int guardaNumFilhos = 0;
 
         if (folha->LeftNode != NULL) {
             numFilhos++;
@@ -71,11 +71,32 @@ void BinaryTree::verificarFilho(TreePointer folha){
     }
 }
 
+int BinaryTree::nosSemFilhos(){
+    nosSemFilhos(root);
+}
+
+int BinaryTree::nosSemFilhos(TreePointer folha){
+    int contarSemFilhos = 0;
+
+    if(folha == NULL){
+        return 0;
+    }
+
+    contarSemFilhos += nosSemFilhos(folha->LeftNode);
+    contarSemFilhos += nosSemFilhos(folha->RightNode);
+
+    if(folha->LeftNode == NULL && folha->RightNode == NULL){
+        contarSemFilhos += 1;
+    }
+
+    return contarSemFilhos;
+}
+
 int BinaryTree::contarNos(){
     contarNos(root);
 }
 
-int BinaryTree::contarNos(TreeNode* folha){
+int BinaryTree::contarNos(TreePointer folha){
     if(folha == NULL){
         return 0;
     }
@@ -85,11 +106,13 @@ int BinaryTree::contarNos(TreeNode* folha){
     }
 }
 
+
+
 void BinaryTree::PreOrdem(){
     PreOrdem(root);
 }
 
-void BinaryTree::PreOrdem(TreeNode* folha){
+void BinaryTree::PreOrdem(TreePointer folha){
     if(folha != NULL){
         cout << folha->Entry << ",";
         verificarFilho(folha);

@@ -1,4 +1,5 @@
 //Vinícius Vicari n 2124925
+//Pedro Henrique Caetano Barbosa n 2154635
 #ifndef BINARYTREE_H
 #define BINARYTREE_H
 #include <iostream>
@@ -15,6 +16,7 @@ class BinaryTree{
     void insert(string s1, string s2, string s3);
     void verificarFilho();
     int contarNos();
+    int nosSemFilhos();
 
     private:
 
@@ -30,6 +32,7 @@ class BinaryTree{
     void insert(string s1, string s2, string s3, TreePointer folha);
     void verificarFilho(TreePointer folha);
     int contarNos(TreePointer folha);
+    int nosSemFilhos(TreePointer folha);
 };
 
 #endif
