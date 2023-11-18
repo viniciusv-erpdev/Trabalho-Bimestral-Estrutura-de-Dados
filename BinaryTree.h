@@ -14,6 +14,7 @@ class BinaryTree{
     void PreOrdem();
     void insert(string s1, string s2, string s3);
     void verificarFilho();
+    int contarNos();
 
     private:
 
@@ -28,6 +29,7 @@ class BinaryTree{
     void PreOrdem(TreePointer folha);
     void insert(string s1, string s2, string s3, TreePointer folha);
     void verificarFilho(TreePointer folha);
+    int contarNos(TreePointer folha);
 };
 
 #endif

@@ -50,28 +50,38 @@ void BinaryTree::verificarFilho(){
 }
 
 void BinaryTree::verificarFilho(TreePointer folha){
-    if(folha != NULL){
-        int contador = 0;
+    if (folha != NULL) {
+        int numFilhos = 0;
+        int guardaNumFilhos = 0;
 
-        if(folha->LeftNode != NULL){
-            contador++;
+        if (folha->LeftNode != NULL) {
+            numFilhos++;
         }
 
-        if(folha->RightNode != NULL){
-            contador++;
+        if (folha->RightNode != NULL) {
+            numFilhos++;
         }
-        
-        if(contador == 2){
-            cout << " 2 ED";
-        }else if(contador == 1){
-            if(folha->LeftNode != NULL){
-                cout << " 1 E";
-            }else if(folha->RightNode != NULL){
-                cout << " 1 D";
-            }else{
-                cout << " 0";
-            }
-        }
+
+        cout << " " << numFilhos;
+
+        if(numFilhos == 2){ cout << " ED";}
+        if(numFilhos == 0){ cout << " F";}
+        if(numFilhos == 1 && folha->LeftNode == NULL){ cout << " D";}
+        if(numFilhos == 1 && folha->RightNode == NULL){ cout << " E";}
+    }
+}
+
+int BinaryTree::contarNos(){
+    contarNos(root);
+}
+
+int BinaryTree::contarNos(TreeNode* folha){
+    if(folha == NULL){
+        return 0;
+    }
+
+    else{
+        return 1 + contarNos(folha->LeftNode) + contarNos(folha->RightNode);
     }
 }
 
@@ -81,12 +91,10 @@ void BinaryTree::PreOrdem(){
 
 void BinaryTree::PreOrdem(TreeNode* folha){
     if(folha != NULL){
-        if(folha->Entry != "X"){ 
         cout << folha->Entry << ",";
-        verificarFilho();
+        verificarFilho(folha);
         cout << "\n";
         PreOrdem(folha->LeftNode);
-        PreOrdem(folha->RightNode);
-            }    
+        PreOrdem(folha->RightNode);    
         }
     }

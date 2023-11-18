@@ -31,7 +31,7 @@ int main(){
     if(!LerArquivo.is_open()){ cout << "Erro ao abrir o arquivo! \n";}
     while(LerArquivo >> chave1 >> chave2 >> chave3){
        arvore.insert(chave1, chave2, chave3);
-
+       arvore.contarNos(); 
     }
 }
 
@@ -41,12 +41,13 @@ int main(){
     if(!LerArquivo.is_open()){ cout << "Erro ao abrir o arquivo! \n";}
     while(LerArquivo >> chave1 >> chave2 >> chave3){
         arvore.insert(chave1, chave2, chave3);
-                         
+        arvore.contarNos();                         
     }
 
 }
 
     arvore.PreOrdem();
+    cout << "\n O numero de nos da arvore e: " << arvore.contarNos(); 
     LerArquivo.close();
     return 0;
 }
